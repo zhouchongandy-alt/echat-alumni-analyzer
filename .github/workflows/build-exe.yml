@@ -21,7 +21,7 @@ jobs:
 
       - name: Build EXE with PyInstaller
         run: |
-          pyinstaller --onefile --windowed --name="光华校友会分析工具" wechat_analyzer.py
+          pyinstaller --onefile --windowed --name="GSM-ALUMINI" wechat_analyzer.py
 
       - name: Upload artifact (EXE file)
         uses: actions/upload-artifact@v4
