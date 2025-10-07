@@ -20,7 +20,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile --windowed --name="光华校友会分析工具" wechat_analyzer.py
+          pyinstaller --onefile --windowed --name="Gsm-analysis-TOOL" wechat_analyzer.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
