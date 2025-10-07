@@ -1,0 +1,29 @@
+name: Build EXE
+
+on:
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller pandas openpyxl
+
+      - name: Build EXE
+        run: |
+          pyinstaller --onefile --windowed --name="光华校友会分析工具" wechat_analyzer.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: analyzer-exe
+          path: dist/
