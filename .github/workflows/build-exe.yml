@@ -26,5 +26,5 @@ jobs:
       - name: Upload artifact (EXE file)
         uses: actions/upload-artifact@v4
         with:
-          name: 光华校友会分析工具_exe
+          name: GSM-ANALYSIS_exe
           path: dist/
